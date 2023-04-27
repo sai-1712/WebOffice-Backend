@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosastic = require('mongoosastic')
 
 const clientSchema = new mongoose.Schema({
     id :{
@@ -30,5 +31,7 @@ const clientSchema = new mongoose.Schema({
         required: true
     }
 });
+
+clientSchema.plugin(mongoosastic)
 
 module.exports = mongoose.model('Client', clientSchema);
